@@ -1,0 +1,97 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Patient {
+  """id of the clinic"""
+  patientId: String!
+
+  """name of the patient"""
+  patientName: String!
+
+  """description of the patient"""
+  patientDescription: String!
+
+  """date of birth of the patient"""
+  patientDob: String!
+
+  """gender of the patient"""
+  patientGender: String!
+
+  """insurance number of the patient"""
+  insuranceNumber: String!
+
+  """clinic id of the patient"""
+  clinicId: String!
+
+  """admission date of the patient"""
+  admissionDate: String!
+
+  """Discharge date of the patient"""
+  dischargeDate: String!
+}
+
+type Query {
+  patients: [Patient!]!
+  patient(patientId: String!): Patient!
+  patientsByClinicIdAndAdmissionDateRange(clinicId: String!, fromDate: String!, toDate: String!): [Patient!]!
+}
+
+type Mutation {
+  createPatient(createPatientInput: CreatePatientInput!): Patient!
+  updatePatient(updatePatientInput: UpdatePatientInput!): Patient!
+  removePatient(patientId: String!): Patient!
+}
+
+input CreatePatientInput {
+  """name of the patient"""
+  patientName: String!
+
+  """description of the patient"""
+  patientDescription: String!
+
+  """name of the patient"""
+  patientDob: String!
+
+  """gender of the patient"""
+  patientGender: String!
+
+  """insurance number of the patient"""
+  insuranceNumber: String!
+
+  """clinic id of the patient"""
+  clinicId: String!
+
+  """adminssion date number of the patient"""
+  admissionDate: String!
+
+  """discharge date number of the patient"""
+  dischargeDate: String!
+}
+
+input UpdatePatientInput {
+  """name of the patient"""
+  patientName: String
+
+  """description of the patient"""
+  patientDescription: String
+
+  """name of the patient"""
+  patientDob: String
+
+  """gender of the patient"""
+  patientGender: String
+
+  """insurance number of the patient"""
+  insuranceNumber: String
+
+  """clinic id of the patient"""
+  clinicId: String
+
+  """adminssion date number of the patient"""
+  admissionDate: String
+
+  """discharge date number of the patient"""
+  dischargeDate: String
+  patientId: String!
+}
